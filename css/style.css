@@ -1,0 +1,742 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(49, 49, 49) !important;
+}
+
+
+.container{
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.sticker{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 3;
+}
+
+.sticker a{
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+.sticker-phone a{
+    color: rgb(161, 6, 1);
+}
+
+.sticker-mail a{
+    color: rgb(255, 145, 0);
+}
+
+.sticker-phone::after,
+.sticker-mail::after{
+    transform: scale(1);
+}
+
+nav{
+    width: 100vw;
+    padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: rgba(189, 187, 187, 0.397) 0.3px solid;
+    position:fixed;
+    z-index: 2;
+}
+
+/* down-box  */
+
+.toggle-nav{
+    display: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+    width: 100vw;    
+}
+
+.down-info{
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+    background-color: #f9f9f9;
+}
+
+.toggle-nav a,
+.contact a{
+    text-decoration: none;
+    padding: 16px;
+    color: grey;
+}
+
+.toggle-nav a:hover{
+    color: rgb(161, 6, 1);
+}
+
+.double-down{
+    display: flex;
+    box-shadow: 0px -7px 23px -7px rgba(119, 119, 119, 0.86);
+    justify-content: center;
+    text-align: center;
+    color: grey;
+    width: 100vw;
+    background-color: #f9f9f9;
+}
+
+.fa-angle-double-down{
+    padding-top: 16px;
+}
+
+.toggle-nav input{
+    opacity: 0;
+    width: 100vw;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top:35%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+input:checked +div{
+    display: flex;
+}
+
+.main-nav{
+    width: 100vw;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo{
+    width: 205px;
+    padding: 20px;
+    padding-right: 0px;
+}
+
+/* web menu */
+
+ul{
+    display: flex;
+    flex-direction: row;
+}
+
+ul li{
+    text-decoration: none;
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0 16px;
+    color:black;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+ul li:last-child{
+    padding-right: 0px;
+}
+
+ul li:hover{
+    color: rgb(161, 6, 1);
+    animation: ease-in-out;
+}
+
+/* hamburger menu */
+
+#menuToggle{
+    display: none;
+    position: relative;
+    top:0px;
+    right:20px;
+}
+
+#menuToggle li{
+    color: #676565;   
+}
+
+#menuToggle li:hover{
+    color: rgb(161, 6, 1);
+    animation: ease-in-out;
+} 
+
+#menuToggle input{
+    opacity: 0;
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    z-index: 2;
+}
+
+#menuToggle span{
+    display: block;
+    width: 32px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
+    background-color: #cdcdcd;
+    border-radius: 3px;
+    transition: all 0.5s linear;   
+}
+
+#menuToggle input:checked ~span{
+    transform: rotate(45deg);
+    background-color: #676565;
+    transform-origin: 0% 0%;
+}
+
+#menuToggle input:checked ~span:nth-child(3){
+    display: none;
+}
+
+#menuToggle input:checked ~span:nth-child(4){
+    transform: rotate(-45deg);
+    transform-origin: 0% 100%;
+    margin-top: 18px;
+}
+
+#menu{
+    position: absolute;
+    width: 250px;
+    padding: 25px 50px;
+    background-color: #ededed;
+    list-style: none;
+    margin: 13px 0 0 -240px;
+    right: -320px;
+    transition: all 1s linear;
+    z-index: 5;
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+}
+
+#menu li{
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+#menuToggle input:checked ~ul{
+    right: -60px;
+}
+
+/* section banner */
+
+.banner{
+    padding-top: 60px;
+}
+
+.banner-central{
+    margin: 0 auto;
+    background-image: url(./../img/background-lines-geometry-3.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 20px;
+}
+
+.banner h2, 
+.banner-text{
+    color: white;
+    font-size: 2.8rem;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.banner-price{
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(228, 63, 51);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: banner-price 2s;
+    box-shadow: -2px 1px 28px 4px #000000;
+} 
+
+.price{
+    font-size: 16px;
+}
+
+@keyframes banner-price {
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.banner-text{
+    padding-top: 0px;
+    font-weight: 300;
+}
+
+.fas, .far{
+    margin-right: 10px;
+}
+
+.banner-central button{
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    margin-bottom: 16px;
+    padding: 16px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border:none;
+    border-radius: 6px;
+    background-color: rgba(253, 175, 72, 0.603);
+    transition: background-color 0.8s ease-in-out;
+    cursor: pointer;
+}
+
+.click-me{
+    animation: click-me 1.5s infinite;
+}
+
+@keyframes click-me{
+    from{
+        background-color: rgba(253, 175, 72, 0.521);
+    }
+    to{
+        background-color: rgb(243, 151, 14);
+    }
+}
+
+.banner-central button:hover{
+    background-color: rgb(243, 151, 14);
+}
+
+.button-box{
+    display: flex;
+    width: calc(100% / 2);
+    margin: 0 auto;
+}
+
+.button-box button:first-child{
+    margin-right: 6px;
+}
+
+.portfolio{
+    margin: 30px auto 0px;
+    width: 50%;
+    
+    
+}
+
+.portfolio img{
+    width: 100%;
+
+}
+
+.anzeige{
+    margin-bottom: 50px;
+    color: rgb(243, 151, 14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+h3{
+    color: black;
+    text-align: center;
+    margin: 40px auto;
+    font-size: 25px;
+}
+
+.anzeige-items{
+    display: flex;
+    justify-content: space-around;
+}
+
+.anzeige-item{
+    margin: 0px 20px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.anzeige-item .fas, p{
+    font-size: 25px;
+}
+
+.public{
+    margin: 0 auto;
+    width: 70%;
+}
+
+.public h3{
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/* section "funktionen" */
+
+.funktionen{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(180,58,58);
+    background: linear-gradient(173deg, rgb(117, 2, 2) 0%, rgba(245,193,69,1) 50%, rgba(235,227,217,1) 100%);
+    box-shadow: 0px -4px 14px -2px rgba(148, 145, 145, 0.849);
+}
+
+.func-button{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.func-button button, .more-btn, .btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px ;
+    padding: 16px;
+    flex-basis: calc(100%/3 - 16px);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border:none;
+    background-color: rgba(253, 175, 72, 0.521);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.f-btn1{
+    animation:  step 1s 3s alternate;
+    animation-iteration-count: infinite;
+}
+
+.f-btn2{
+    animation: step 2s 2s alternate;
+    animation-iteration-count: infinite;
+}
+
+.f-btn3{
+    animation: step 3s  1s alternate;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes step{
+    from{
+        background-color: rgba(248, 178, 87, 0.521);
+    }
+    to{
+        background-color: rgb(243, 151, 14);
+    }
+}
+
+.func-cards{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.card{
+    display: flex;
+    flex-basis: calc(90%/3 - 20px);
+    justify-content: center;
+    align-items:flex-start;
+    margin: 10px auto;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: -2px 1px 19px -3px #000000;
+    position: relative;
+}
+
+.card .icon{
+    font-size: 2.8rem;
+    margin: 0 auto;
+}
+
+.card h4{
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 16px auto;
+}
+
+.card p{
+    font-size: inherit;
+    text-align: justify;
+}
+
+.ent{
+    padding: 6px;
+    background-color: rgb(253, 109, 13);
+    position: absolute;
+    right: 0px;
+    top:0px;
+}
+
+.more-btn, .btn-submit{
+    width: 50%;
+    margin: 30px auto;
+    background-color: rgb(243, 151, 14);
+}
+
+/* contact section */
+
+.contact{
+    margin: 50px 16px 0px;
+    padding-bottom: 50px;
+}
+
+.contact-data{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-data h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.contact-data a{
+    font-size: 1.2rem;
+    padding-bottom: 0px;
+}
+
+.employees{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.employee{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+    flex-basis: calc(100%/2 - 80px);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+}
+
+.employee img{
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0px 13px 23px -5px rgba(0,0,0,0.86);
+    margin-bottom: 16px;
+}
+
+.employee p span{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgb(243, 151, 14);
+}
+
+.employee p{
+    font-size: 1.2rem;
+}
+
+.form-box{
+    margin: 50px auto;
+    width: 80%;
+}
+
+#contact-form{
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border:2px solid rgb(243, 151, 14);
+    border-radius: 15px;
+    background-color: wheat;
+}
+
+#contact-form select, 
+#contact-form input,
+#note{
+    width: 40%;
+    padding: 16px;
+    border:none;
+    margin: 8px;
+    font-size: 1rem;
+    color: rgb(90, 89, 89);
+    outline: none;
+}
+
+#note{
+    width: 82%;
+}
+
+.annotation{
+    width: 82%;
+    font-size: 0.9rem;
+}
+
+.annotation input{
+    width: 20px !important;
+    display: inline-block;
+}
+
+footer{
+    position: absolute;
+    z-index: 10;
+    background-color: rgb(58, 57, 57);
+    color: honeydew;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; 
+}
+
+footer .first-footer-box{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    margin-top:20px;
+}
+
+footer img{
+    margin-right: 16px;
+    width: 5%;
+    background-color: white;
+}
+
+footer p{
+    font-size: 0.9rem;
+}
+
+.second-footer-box{
+    padding: 16px;
+    align-self: flex-start;
+}
+
+/* responsive */
+
+@media screen and (max-width:991px){
+    #menuToggle{
+        display:block;
+    }
+
+    nav{
+        padding: 0px;
+    }
+
+    .menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .toggle-nav{
+        display: flex;
+        
+        flex-direction: column;
+        
+    }
+
+    .sticker{
+        display: none;
+    }
+
+    .banner-central button{
+        width: 90%;
+    }
+
+    .banner-central h2{
+        font-size: 2rem;
+    }
+
+    .portfolio{
+        width: 90%;
+    }
+
+    .button-box{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .button-box button:first-child {
+        margin: 20px auto;
+    }
+
+    .anzeige-items{
+        flex-basis: calc(100% / 4 - 40px);
+        flex-wrap: wrap; 
+    }
+
+    .funktionen h3{
+        font-size: 1.3rem;
+    }
+
+    .func-button {
+        flex-direction: column;
+        width: 70%;
+    }
+
+    .func-button button, 
+    .more-btn, 
+    .btn-submit{
+        flex-basis: 70%;
+    }
+
+    .card{
+        flex-basis: calc(100%/2 - 20px);
+        flex-wrap: wrap;
+        height: 360px;
+    }
+
+    .card p:last-child{
+        font-size: 1rem;
+        padding: 0 8px;
+    }
+
+    .employee{
+        flex-basis: calc(100% - 40px);
+    }
+
+    .employee img{
+        width: 150px;
+    }   
+    
+}
+
+@media screen and (max-width:550px) {
+    .card p:last-child{
+        font-size: 0.8rem;
+    }
+
+    .card{
+        flex-basis: 70%;
+        height: fit-content;
+    }
+
+    #contact-form select, 
+    #contact-form input,
+    #note{
+        width: 70%;
+    }    
+}
