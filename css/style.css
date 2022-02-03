@@ -4,11 +4,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Open Sans', sans-serif;
     color: rgb(49, 49, 49) !important;
 }
-
 
 .container{
     background-color: #f9f9f9;
@@ -293,16 +296,20 @@ ul li:hover{
     margin-right: 10px;
 }
 
+.banner-central a{
+    text-decoration: none;
+}
+
 .banner-central button{
     margin: 20px auto;
     display: block;
     width: 50%;
     margin-bottom: 16px;
-    padding: 16px 10px;
+    padding: 16px 5px;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
-    border:none;
+    border: none;
     border-radius: 6px;
     background-color: rgba(253, 175, 72, 0.603);
     transition: background-color 0.8s ease-in-out;
@@ -332,20 +339,26 @@ ul li:hover{
     margin: 0 auto;
 }
 
-.button-box button:first-child{
+.button-box a{
+    flex-basis: calc(100%/2);
+    display: flex;
+}
+
+.button-box a button{
+    width: 100%;
+}
+
+.button-box a:first-child{
     margin-right: 6px;
 }
 
 .portfolio{
     margin: 30px auto 0px;
     width: 50%;
-    
-    
 }
 
 .portfolio img{
     width: 100%;
-
 }
 
 .anzeige{
@@ -354,14 +367,12 @@ ul li:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 h3{
-    color: black;
     text-align: center;
     margin: 40px auto;
-    font-size: 25px;
+    font-size: 1.8rem;
 }
 
 .anzeige-items{
@@ -397,9 +408,16 @@ h3{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: rgb(180,58,58);
-    background: linear-gradient(173deg, rgb(117, 2, 2) 0%, rgba(245,193,69,1) 50%, rgba(235,227,217,1) 100%);
+    background: rgb(78,76,76);
+    background: linear-gradient(180deg, rgba(78,76,76,1) 1%, rgba(255,254,252,0.8995973389355743) 51%, rgba(222,211,197,1) 66%);
     box-shadow: 0px -4px 14px -2px rgba(148, 145, 145, 0.849);
+}
+
+.funktionen h2, .content h2, .slider h2{
+    margin: 40px;
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
 }
 
 .func-button{
@@ -419,34 +437,23 @@ h3{
     font-weight: 600;
     text-transform: uppercase;
     border:none;
-    background-color: rgba(253, 175, 72, 0.521);
+    background-color: rgba(253, 175, 72, 0.726);
     border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.6s ease-in-out;
 }
 
-.f-btn1{
-    animation:  step 1s 3s alternate;
-    animation-iteration-count: infinite;
+.more-btn, .btn-submit{
+    flex-basis: 50%;
 }
 
-.f-btn2{
-    animation: step 2s 2s alternate;
-    animation-iteration-count: infinite;
+.func-button button:hover{
+    background-color: rgb(243, 151, 14);
+    animation: ease-in-out;
 }
 
-.f-btn3{
-    animation: step 3s  1s alternate;
-    animation-iteration-count: infinite;
-}
-
-
-@keyframes step{
-    from{
-        background-color: rgba(248, 178, 87, 0.521);
-    }
-    to{
-        background-color: rgb(243, 151, 14);
-    }
+.active{
+    background-color: rgb(243, 117, 14);
 }
 
 .func-cards{
@@ -465,8 +472,8 @@ h3{
     flex-direction: column;
     padding: 16px;
     background-color: #f9f9f9;
-    border-radius: 20px;
-    box-shadow: -2px 1px 19px -3px #000000;
+    border-radius: 10px;
+    box-shadow: 1px 2px 13px -4px #363636;
     position: relative;
 }
 
@@ -488,19 +495,248 @@ h3{
 
 .ent{
     padding: 6px;
-    background-color: rgb(253, 109, 13);
+    background-color: rgb(243, 151, 14);
     position: absolute;
     right: 0px;
     top:0px;
 }
 
 .more-btn, .btn-submit{
-    width: 50%;
     margin: 30px auto;
     background-color: rgb(243, 151, 14);
 }
 
-/* contact section */
+/*  more article */
+.more{
+    display: none;
+}
+
+.content h2, .slider h2{
+    color: rgb(49, 49, 49);
+}
+
+.contents{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100% -32px;
+}
+
+.more-content-box{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content: space-between;
+    margin: 16px;
+    padding-top: 26px;
+    flex-basis: calc(100%/2 - 32px);
+    position: relative;
+}
+
+.more-content-box h3{
+    text-align: start;
+    margin: 0px;
+}
+
+.more-content-box p{
+    font-size: 1rem;
+    text-align:left;
+}
+
+.more-content-box i{
+    font-size: 3rem;
+    margin: 10px 20px 0px 0px;
+}
+
+.calendar-icon{
+    margin-left: 12px;
+}
+
+/* slider section */
+
+.slider{
+    margin-top: 50px;
+    width: 100%;
+} 
+
+.slideshow-container{
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8) 0%,
+        rgba(0, 0, 0, 0.322) 100%
+    ),
+    url('../img/slider-bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    margin: auto;
+}
+
+.wrapper{
+    display: none;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.slider-image{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    border: 4px solid #777;
+    background-color: rgba(252, 250, 249, 0.514);
+    margin-bottom: 16px;
+}
+
+#img-1, 
+#img-2, 
+#img-3,
+#img-4, 
+#img-5, 
+#img-6,
+#img-7, 
+#img-8{
+    position: absolute;
+}
+
+#img-1{
+    width: 140px;
+    height: 140px;
+    left:25px;
+    top:22px;
+}
+
+#img-2{
+    width: 140px;
+    height: 140px;
+    top:28px;
+    left:30px;
+}
+
+#img-3{
+    height: 110px;
+    left: 13px;
+    top:40px;
+}
+
+#img-4{
+    width: 150px;
+    left:22px;
+    top:22px;
+}
+
+#img-5{
+    width: 200px;
+    left:-2px;
+    top:-20px;
+}
+
+#img-6{
+    width: 150px;
+    left: 25px;
+    top: 22px;
+}
+
+#img-7{
+    width: 150px;
+    left:22px;
+    top:20px;
+}
+
+#img-8{
+    width: 150px;
+    left:22px;
+    top:22px;
+}
+
+.slider-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 160px;
+}
+
+.slider-text span{
+    font-size: 1.7rem;
+    font-weight: bold;
+    color:rgba(253, 175, 72, 0.993);
+    margin-bottom: 25px;
+}
+
+.slider-text p{
+    color: white;
+    margin-bottom: 16px;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    _margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    transition: 1s ease;
+    border-radius: 0 3px;
+}
+
+.prev{
+    left: 0;
+}
+
+.next{
+    right: 0;
+    border-radius: 3px 0;
+}
+
+.prev:hover,
+.next:hover{
+    background-color: rgba(253, 175, 72, 0.445);
+}
+
+.dot{
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 20px 2px 0;
+    background-color: rgba(253, 175, 72, 0.445);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover{
+    background-color: rgba(253, 175, 72, 0.993);
+}
+
+.fade{
+    -webkit-animation-name:fade;
+    -webkit-animation-duration:1.5s;
+    animation-name:fade;
+    animation-duration:1.5s;
+}
+
+@-webkit-keyframes fade{
+    from{opacity:0.4}
+    to{opacity: 1}
+}
+
+@keyframes fade{
+    from{opacity:0.4}
+    to{opacity: 1}
+}
+
+/* contact-section */
 
 .contact{
     margin: 50px 16px 0px;
@@ -510,6 +746,7 @@ h3{
 .contact-data{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .contact-data h2{
@@ -534,15 +771,16 @@ h3{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 20px;
-    flex-basis: calc(100%/2 - 80px);
-    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+    margin: 30px 10px;
+    flex-basis: calc(100%/4 - 80px);
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.39);
 }
 
 .employee img{
     width: 200px;
     border-radius: 50%;
-    box-shadow: 0px 13px 23px -5px rgba(0,0,0,0.86);
+    -box-shadow: 0px 13px 23px -5px rgba(0,0,0,0.86);
     margin-bottom: 16px;
 }
 
@@ -553,11 +791,11 @@ h3{
 }
 
 .employee p{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .form-box{
-    margin: 50px auto;
+    margin: 10px auto;
     width: 80%;
 }
 
@@ -569,7 +807,7 @@ h3{
     align-items: center;
     border:2px solid rgb(243, 151, 14);
     border-radius: 15px;
-    background-color: wheat;
+    background-color: rgb(250, 239, 218);
 }
 
 #contact-form select, 
@@ -646,14 +884,19 @@ footer p{
     .menu{
         display: none;
     }
+    
+    .employee{
+    flex-basis: calc(100%/2 - 40px);
+    border-bottom: 2px solid rgba(128, 128, 128, 0.39);
+    }
 }
+
+
 
 @media screen and (max-width:768px) {
     .toggle-nav{
         display: flex;
-        
         flex-direction: column;
-        
     }
 
     .sticker{
@@ -714,6 +957,19 @@ footer p{
         padding: 0 8px;
     }
 
+    .wrapper{
+        width: 80%;
+    }
+
+    .slideshow-container p{
+        font-size: 1.5rem;
+
+    }
+
+    .more-content-box{
+        flex-basis: calc(100% - 32px)
+    }
+
     .employee{
         flex-basis: calc(100% - 40px);
     }
@@ -725,8 +981,16 @@ footer p{
 }
 
 @media screen and (max-width:550px) {
+    .banner-central{
+        padding-top: 30px;
+    }
+
+    .banner-text{
+        font-size: 1.8rem;
+    }
+
     .card p:last-child{
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .card{
@@ -734,9 +998,14 @@ footer p{
         height: fit-content;
     }
 
+    .slideshow-container p{
+        font-size: 1.1rem;
+    }
+
     #contact-form select, 
     #contact-form input,
     #note{
         width: 70%;
-    }    
+    }   
+
 }
