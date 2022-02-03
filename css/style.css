@@ -211,7 +211,7 @@ ul li:hover{
     position: absolute;
     width: 250px;
     padding: 25px 50px;
-    background-color: #ededed;
+    background-color: #edededef;
     list-style: none;
     margin: 13px 0 0 -240px;
     right: -320px;
@@ -430,7 +430,7 @@ h3{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 8px ;
+    margin: 8px 0px;
     padding: 16px;
     flex-basis: calc(100%/3 - 16px);
     font-size: 1rem;
@@ -923,7 +923,7 @@ footer p{
     }
 
     .button-box button:first-child {
-        margin: 20px auto;
+        margin: 20px auto 10px;
     }
 
     .anzeige-items{
@@ -946,6 +946,10 @@ footer p{
         flex-basis: 70%;
     }
 
+    .button-box a:first-child {
+        margin-right: 0px;
+    }
+
     .card{
         flex-basis: calc(100%/2 - 20px);
         flex-wrap: wrap;
@@ -963,7 +967,6 @@ footer p{
 
     .slideshow-container p{
         font-size: 1.5rem;
-
     }
 
     .more-content-box{
